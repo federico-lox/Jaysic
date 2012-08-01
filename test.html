@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jay - test</title>
+		<script src="src/jaysic.js"></script>
+		<script src="src/jaysic-commands.js"></script>
+		<script type="text/nothing">
+			PRINT "THIS SHALL NOT BE PARSED"
+		</script>
+		<script type="text/jaysic">
+			@@@ console output test @@@
+			PRINT "Hello world!"
+		</script>
+		<script type="text/jaysic">
+			@@@ variable assignment @@@
+			SET X "string value"
+			SET Y 5
+			PRINT "X contains:" X
+			PRINT "Y contains:" Y
+		</script>
+		<script type="text/jaysic">
+			@@@these are comments
+			@@@and will be ignored
+			PRINT "@@@this is not a comment"
+		</script>
+	</head>
+	<body>
+		Welcome to Jay, this is a simple test.
+	</body>
+</html>
