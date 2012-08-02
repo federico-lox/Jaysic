@@ -101,6 +101,13 @@
 		commands[commandId] = new Command(commandId, implementation, variableSubstitution);
 	}
 
+	/**
+	 * @private
+	 *
+	 * Returns the command currently being processed
+	 *
+	 * @returns {Command} The command object for the current command
+	 */
 	function getCurrentCommand() {
 		return (commandChain.length) ? commandChain[commandChain.length - 1] : undefined;
 	}
@@ -110,6 +117,8 @@
 	 *
 	 * Returns the number of the line being processed,
 	 * undefined if no script is in progress
+	 *
+	 * @returns {number} The number for the line being processed
 	 */
 	function getCurrentLineNumber() {
 		return linesCounter;
@@ -120,6 +129,8 @@
 	 *
 	 * Returns the number of the line being processed,
 	 * undefined if no script is in progress
+	 *
+	 * @returns {String} The text for the line being processed
 	 */
 	function getCurrentLine() {
 		return (linesCounter && lines) ? lines[linesCounter - 1] : undefined;
