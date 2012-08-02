@@ -8,34 +8,6 @@
 (function (context) {
 	'use strict';
 
-	var intRegEx = new RegExp('^\\d+$', 'g'),
-		floatRegEx = new RegExp('^\\d*\\.\\d+$', 'g');
-
-	/**
-	 * @private
-	 *
-	 * Converts a string into it's numerical representation if needed
-	 *
-	 * @params {mixed} value The value to extract a number from
-	 * @returns {mixed} the numerical representation if there was one, the original value untouched otherwise
-	 */
-	function processNumbers(value) {
-		//reset RegExp status
-		intRegEx.lastIndex = floatRegEx.lastIndex = 0;
-
-		if (typeof value === 'string') {
-			if (intRegEx.test(value)) {
-				//~~ converts any type always to a number (0 in case of utter failure)
-				//this is the desired behavior for Jaysic (parseInt would return NaN for failure)
-				value = ~~value;
-			} else if (floatRegEx.test(value)) {
-				value = parseFloat(value);
-			}
-		}
-
-		return value;
-	}
-
 	/**
 	 * @private
 	 *
@@ -43,12 +15,12 @@
 	 */
 	function jaysicCommands(jaysic) {
 		//variable management
-		jaysic.registerCommand('SET', function (identifier, value) {
-			this[identifier] = processNumbers(value);
+		jaysic.registerCommand('set', function (identifier, value) {
+			this[identifier] = value;
 			return value;
 		}, false);
 
-		jaysic.registerCommand('UNSET', function (identifier) {
+		jaysic.registerCommand('unset', function (identifier) {
 			var ret = false;
 
 			if (typeof this[identifier] !== 'undefined') {
@@ -60,20 +32,20 @@
 		}, false);
 
 		//input/output
-		jaysic.registerCommand('PRINT', function () {
+		jaysic.registerCommand('print', function () {
 			//since console.log.apply is an illegal invokation just concatenate all the values as a string
-			console.log(Array.prototype.join.call(arguments, ' '));
+			console.log(Array.prototype.join.call(arguments, ' ').replace('&apos;', "'"));
 		});
 
 		//Math
-		jaysic.registerCommand('SUM', function () {
+		jaysic.registerCommand('sum', function () {
 			var total = 0,
 				value,
 				x,
 				y;
 
 			for (x = 0, y = arguments.length; x < y; x += 1) {
-				value = processNumbers(arguments[x]);
+				value = arguments[x];
 
 				//~~ converts any type always to a number (0 in case of utter failure)
 				//this is the desired behavior for Jaysic (parseInt would return NaN for failure)
@@ -83,14 +55,14 @@
 			return total;
 		});
 
-		jaysic.registerCommand('SUBTRACT', function () {
+		jaysic.registerCommand('subtract', function () {
 			var total,
 				value,
 				x,
 				y;
 
 			for (x = 0, y = arguments.length; x < y; x += 1) {
-				value = processNumbers(arguments[x]);
+				value = arguments[x];
 				//~~ converts any type always to a number (0 in case of utter failure)
 				//this is the desired behavior for Jaysic (parseInt would return NaN for failure)
 				value = (typeof value === 'number') ? value : ~~value;
