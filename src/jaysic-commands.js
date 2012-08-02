@@ -31,10 +31,14 @@
 			return ret;
 		}, false);
 
+		jaysic.registerCommand('isset', function (identifier) {
+			return (typeof this[identifier] === 'undefined') ? 0 : 1;
+		}, false);
+
 		//input/output
 		jaysic.registerCommand('print', function () {
 			//since console.log.apply is an illegal invokation just concatenate all the values as a string
-			console.log(Array.prototype.join.call(arguments, ' ').replace('&apos;', "'"));
+			console.log(Array.prototype.join.call(arguments, ' '));
 		});
 
 		//Math
@@ -75,6 +79,12 @@
 			}
 
 			return total;
+		});
+
+		//string manipulation
+		jaysic.registerCommand('join', function () {
+			//since console.log.apply is an illegal invokation just concatenate all the values as a string
+			return "'" + Array.prototype.join.call(arguments, '') + "'";
 		});
 	}
 

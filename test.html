@@ -4,7 +4,7 @@
 		<title>Jay - test</title>
 		<script src="src/jaysic.js"></script>
 		<script src="src/jaysic-commands.js"></script>
-		<script type="text/nothing">
+		<script type="text/jaysic-malformed-type">
 			print "THIS SHALL NOT BE PARSED"
 		</script>
 		<script type="text/jaysic">
@@ -19,18 +19,24 @@
 			print 'y contains:' y
 			unset x
 			unset y
-			print 'x now is:' x
-			print 'y now is:' y
+			print 'x is set:' (isset x)
+			print 'y is set:' (isset y)
 		</script>
 		<script type="text/jaysic">
 			//these are comments
 			//and will be ignored
-			print '//this ain&apos;t a comment' 'actually'
+			print '//this is not a comment' 'actually'
+			print 'and that''s an escaped quote' 'BTW'
+			print 'and the following is an empty string' '' '(but you can''t really see it XD)'
 		</script>
 		<script type="text/jaysic">
 			//Math
 			set x (sum 5 9)
 			print (subtract x 3)
+		</script>
+		<script type="text/jaysic">
+			//string manipulation
+			print (join 'fizz' 'buzz')
 		</script>
 		<script type="text/jaysic">
 			//nested commands
