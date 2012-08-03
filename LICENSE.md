@@ -3,7 +3,7 @@ The MIT License
 
 Source code for Jay and Jaysic are Copyright © 2012
 [Federico "Lox" Lucignano](http://plus.ly/federico.lox "Google profile"),
-[contributors](http://github.com/federico-lox/Jay/contributors "Jay contributors at GitHub").
+[contributors](http://github.com/federico-lox/Jaysic/contributors "Jaysic contributors at GitHub").
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal in
