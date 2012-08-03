@@ -77,7 +77,7 @@ print 'The result of 5 + 6 is:' (sum (subtract 9 4) 6)
 
 Sub-contexts are resolved from the innermost to the outernmost, so the above will first subtract 4 from 9 (i.e. 5) and
 then the result will be used as the first parameter of the sum command the result of which in its' turn will be used
-as the second paramenter for the print command which will output *The result of 5 + 6 is: 11*.
+as the second paramenter for the print command, so the final output will be: *The result of 5 + 6 is: 11*.
 
 **More on the language's syntax will be added soon**
 
