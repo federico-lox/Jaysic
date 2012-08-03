@@ -15,12 +15,17 @@ extend and embed into existing projects while the syntax it's very simple and ha
 on devices with limited keyboards such as **tablets** and **smartphones**.
 
 Jaysic can be used in many different ways, including:
-*	Turning an app or website into an easy-to-customize experience for users by allowing for things like scriptable
-	events, custom toolbars, equations
-*	Allow modding for HTML5 video games
 *	Teaching (or learning) computer programming on any kind of hardware (what about you or your child learning how to
 	program on an iPad?) thanks to the simplified syntax and strict, clear rules
+*	Turning an app or website into an easy-to-customize experience for users by allowing for things like scriptable
+	events, custom toolbars, calculations, etc.
+*	Allow modding of browser-based video games
 
+Being designed as an educational tool from inside out, Jaysic's source code has been developed according to the
+*KISS principle* to be readable and understandable (this also mean that readability and simplicity of the code
+will always be preferred upon more advanced features) with the goal of making it simple to learn how a language
+processor's internals work; the code is furthermore a good example of using well known and widely adopted patterns and
+standards in practice and is also fully documented via JSDoc comments.
 
 The interpreter
 ---------------
