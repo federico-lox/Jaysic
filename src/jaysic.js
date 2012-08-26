@@ -2,6 +2,8 @@
  * Jaysic intepreter
  *
  * @author Federico "Lox" Lucignano <http://plus.ly/federico.lox>
+ * 
+ * @see https://github.com/federico-lox/Jaysic
  */
 
 /*global define, module, console*/
