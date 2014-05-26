@@ -1,8 +1,9 @@
 Jaysic
 ======
 
-Jaysic is a simple scripting language running on a compact, platform-agnostic interpreter built in pure JavaScript.
+Jaysic is a simple scripting language inspired by BASIC and Lisp running on a compact, platform-agnostic interpreter built in pure JavaScript.
 
+**Disclaimer**: The interpreter was created during an hackathon and uses regular expressions and string manipulation rather than a canonical _lexer-as-a-state-machine_ approach; while at one point the intepreter will be replaced by a new one using a real lexer, Jaysic wasn't meant for speed and there's only that much one can do during an hackathon ^_^
 
 Overview and rationale
 ----------------------
