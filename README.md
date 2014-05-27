@@ -1,4 +1,4 @@
-Jaysic
+Jaysic [![Code Climate](https://codeclimate.com/github/federico-lox/Jaysic.png)][codeclimate]
 ======
 
 Jaysic is a simple scripting language inspired by BASIC and Lisp running on a compact, platform-agnostic interpreter built in pure JavaScript.
@@ -93,3 +93,6 @@ Credits
 
 *	[Federico "Lox" Lucignano](http://plus.ly/federico.lox "Google profile"), creator and mantainer
 *	All the [contributors](http://github.com/federico-lox/Jaysic/contributors "Jaysic contributors at GitHub")
+
+
+[codeclimate]: https://codeclimate.com/github/federico-lox/Jaysic
